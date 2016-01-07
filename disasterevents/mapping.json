@@ -1,0 +1,208 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "au-disaster-events": {
+      "dynamic": "strict",
+      "properties": {
+        "@timestamp": {
+          "type": "date",
+          "doc_values": true,
+          "format": "dateOptionalTime"
+        },
+        "@version": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Aircraft damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Aircraft destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Bridge(s) damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Bridge(s) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Building(s) damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Building(s) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Business(es) damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Business(es) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Com Premises damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Com Premises destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Crop(s) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Deaths": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Evacuated": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Farm(s) damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Farm(s) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Government assistance": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        },
+        "Home(s) damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Home(s) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Homeless": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Ind Premises destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Injuries": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Insured Cost": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Livestock destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Motor Vehicle(s) damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Motor Vehicle(s) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Train(s) damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Train(s) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Water vessel(s) damaged": {
+          "type": "long",
+          "doc_values": true
+        },
+        "Water vessel(s) destroyed": {
+          "type": "long",
+          "doc_values": true
+        },
+        "author": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        },
+        "description": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        },
+        "documentType": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        },
+        "endDate": {
+          "type": "date",
+          "doc_values": true,
+          "format": "dateOptionalTime"
+        },
+        "id": {
+          "type": "long",
+          "doc_values": true
+        },
+        "lat": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "lon": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "coords": {
+          "type": "geo_point"
+        },
+        "regions": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        },
+        "resourceType": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        },
+        "resourceUrl": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        },
+        "startDate": {
+          "type": "date",
+          "doc_values": true,
+          "format": "dateOptionalTime"
+        },
+        "subjects": {
+          "type": "long",
+          "doc_values": true
+        },
+        "title": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        },
+        "url": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": true
+        }
+      }
+    }
+  }
+}
