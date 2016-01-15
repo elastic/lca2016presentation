@@ -1,0 +1,90 @@
+{
+    "template" : "public_toilets",
+    "match": "public_toilets",
+    "mappings": {
+        "_default_": {
+            "numeric_detection" : true,
+            "_all": {
+                "enabled": true,
+                "norms": {
+                    "enabled": false
+                }
+            },
+            "dynamic_templates": [
+                {
+                    "au_public_toilets_base": {
+                        "mapping": {
+                            "doc_values": true,
+                            "ignore_above": 1024,
+                            "index": "not_analyzed",
+                            "type": "{dynamic_type}"
+                        },
+                        "match": "*"
+                    }
+                }
+            ],
+            "properties": {
+                "geoip": {
+                    "dynamic": true,
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "geo_point"
+                        }
+                    }
+                },
+                "AddressNote": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "AccessNote": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "ParkingNote": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "AccessibleParkingNote": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "Notes": {
+                    "type": "string",
+                    "index": "analyzed"
+                },
+                "Male": { "type": "boolean" },
+                "Female": { "type": "boolean" },
+                "Unisex": { "type": "boolean" },
+                "AccessLimited": { "type": "boolean" },
+                "PaymentRequired": { "type": "boolean" },
+                "KeyRequired": { "type": "boolean" },
+                "Parking": { "type": "boolean" },
+                "AccessibleMale": { "type": "boolean" },
+                "AccessibleFemale": { "type": "boolean" },
+                "AccessibleUnisex": { "type": "boolean" },
+                "MLAK": { "type": "boolean" },
+                "ParkingAccessible": { "type": "boolean" },
+                "BabyChange": { "type": "boolean" },
+                "Showers": { "type": "boolean" },
+                "DrinkingWater": { "type": "boolean" },
+                "SharpsDisposal": { "type": "boolean" },
+                "SanitaryDisposal": {"type": "boolean" },
+                "@version": {
+                    "index": "not_analyzed",
+                    "type": "string"
+                },
+                "@timestamp": {
+                    "type": "date",
+                    "store": false,
+                    "index": "no"
+                },
+                "type": {
+                    "type": "string",
+                    "store": false,
+                    "index": "no"
+                }
+            }
+        }
+    }
+}
