@@ -1,10 +1,11 @@
 {
   "settings": {
     "number_of_shards": 1,
-    "number_of_replicas": 0
+    "number_of_replicas": 0,
+    "codec": "best_compression"
   },
   "mappings": {
-    "au-disaster-events": {
+    "event": {
       "dynamic": "strict",
       "properties": {
         "@timestamp": {
@@ -14,66 +15,79 @@
         },
         "@version": {
           "type": "long",
-          "doc_values": true
+          "index": "not_analyzed"
         },
         "Aircraft damaged": {
           "type": "long",
-          "doc_values": true
+          "index": "not_analyzed"
         },
         "Aircraft destroyed": {
           "type": "long",
-          "doc_values": true
+          "index": "not_analyzed"
         },
         "Bridge(s) damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Bridge(s) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Building(s) damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Building(s) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Business(es) damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Business(es) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Com Premises damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Com Premises destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Crop(s) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Deaths": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Evacuated": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Farm(s) damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Farm(s) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Government assistance": {
@@ -83,54 +97,66 @@
         },
         "Home(s) damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Home(s) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Homeless": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Ind Premises destroyed": {
           "type": "long",
-          "doc_values": true
+          "index": "not_analyzed"
         },
         "Injuries": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Insured Cost": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Livestock destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Motor Vehicle(s) damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Motor Vehicle(s) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Train(s) damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Train(s) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Water vessel(s) damaged": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "Water vessel(s) destroyed": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "author": {
@@ -155,52 +181,57 @@
         },
         "id": {
           "type": "long",
+          "index": "not_analyzed",
           "doc_values": true
         },
         "lat": {
-          "type": "string",
+          "type": "float",
           "index": "not_analyzed"
         },
         "lon": {
-          "type": "string",
+          "type": "float",
           "index": "not_analyzed"
         },
         "coords": {
-          "type": "geo_point"
+          "type": "geo_point",
+          "index": "not_analyzed"
         },
         "regions": {
           "type": "string",
-          "index": "not_analyzed",
-          "doc_values": true
+          "index": "not_analyzed"
         },
         "resourceType": {
           "type": "string",
-          "index": "not_analyzed",
-          "doc_values": true
+          "index": "not_analyzed"
         },
         "resourceUrl": {
           "type": "string",
-          "index": "not_analyzed",
-          "doc_values": true
+          "index": "not_analyzed"
         },
         "startDate": {
           "type": "date",
-          "doc_values": true,
+          "index": "not_analyzed",
           "format": "dateOptionalTime"
         },
         "subjects": {
           "type": "long",
-          "doc_values": true
+          "index": "not_analyzed"
         },
         "title": {
           "type": "string",
-          "index": "not_analyzed",
-          "doc_values": true
+          "index": "analyzed",
+          "fields": {
+            "raw": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": true,
+              "ignore_above": 256
+            }
+          }
         },
         "url": {
           "type": "string",
-          "index": "not_analyzed",
-          "doc_values": true
+          "index": "not_analyzed"
         }
       }
     }
